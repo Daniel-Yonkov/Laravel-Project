@@ -1,0 +1,25 @@
+<?php $__env->startSection('title'); ?>
+<?php echo e($article->title); ?>
+
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('navigation'); ?>
+<?php echo $__env->make('navigation', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+	<h1><?php echo e($article->title); ?></h1>
+<hr/>
+<article>
+	<div class="body"><?php echo e($article->body); ?></div>
+</article>
+<?php if ( ! ($article->tags->isEmpty())): ?>
+
+<h5>Tags:</h5>
+<ul>
+	<?php foreach($article->tags as $tag): ?>
+		<li><?php echo e($tag->name); ?></li>
+	<?php endforeach; ?>
+
+</ul>
+<?php endif; ?>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('MasterLayout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

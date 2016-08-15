@@ -1,0 +1,21 @@
+<?php $__env->startSection('title'); ?>
+Blogster
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('navigation'); ?>
+<?php echo $__env->make('navigation', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+	<h1>Articles</h1>
+	<hr/>
+
+<?php foreach($articles as $article): ?>
+	<article>
+		<a href="<?php echo e(action('articlesController@show', $article->id)); ?>">
+			<h2><?php echo e($article->title); ?></h2>
+		</a>
+	</article>
+
+	<div class="body"><?php echo e($article->body); ?></div>
+<?php endforeach; ?>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('MasterLayout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

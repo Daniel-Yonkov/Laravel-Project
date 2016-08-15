@@ -1,0 +1,8 @@
+	<?php $__env->startSection('content'); ?>
+	<h1>Contact me! <?php echo e($first); ?> <?php echo e($last); ?>  or <?php echo e($name); ?></h1>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore veniam illum error, iusto adipisci temporibus sequi sapiente ea nihil expedita est, repellat assumenda laboriosam iste quisquam eum animi placeat explicabo vero quis cum. Reprehenderit non accusamus, quasi ipsum distinctio, eligendi rem porro consequuntur laudantium doloribus optio molestiae? Vitae, veritatis voluptas aut harum eveniet laborum nam! Repudiandae alias, nisi iste cupiditate voluptatum blanditiis, mollitia laborum consequuntur veniam, labore nam ex exercitationem. Delectus molestias autem unde, quam quis accusantium, non praesentium pariatur, in id ratione amet dolore doloribus aspernatur impedit dolorum officia natus perspiciatis consequuntur. Dolorem consequatur tenetur repellat laboriosam explicabo eum.
+	</p>
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('MasterLayout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

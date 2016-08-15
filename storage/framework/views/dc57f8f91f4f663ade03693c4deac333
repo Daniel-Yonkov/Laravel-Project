@@ -1,0 +1,40 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="<?php echo e(action('articlesController@index')); ?>">Blogster</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li <?php echo $__env->yieldContent('navAction1'); ?>><a href="<?php echo e(action('articlesController@create')); ?>" rel="home">Create new article</a></li>
+             <?php if(is_numeric(Request::segment(2)) && is_null(Request::segment(3))): ?>
+              <li><a href="<?php echo e(action('articlesController@edit',Request::segment(2))); ?>">Edit article</a></li>
+            <?php endif; ?>
+            <li <?php echo $__env->yieldContent('navAction2'); ?>><a href="<?php echo e(action('pagesController@about')); ?>" rel="about">About</a></li>
+            <li <?php echo $__env->yieldContent('navAction3'); ?>><a href="<?php echo e(action('pagesController@contact')); ?>" rel="contact">Contact</a></li>
+          </ul>
+          <?php if(Auth::user()): ?>
+            <?php
+$path = 'Auth\AuthController@getLogout';
+$log  = 'Logout';
+?>
+          <?php else: ?>
+           <?php
+$path = 'Auth\AuthController@getLogin';
+$log  = 'Login';
+?>
+          <?php endif; ?>
+
+           <ul class="nav navbar-nav navbar-right">
+            <li><a href="<?php echo e(action($path)); ?>"><?php echo e($log); ?></a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+

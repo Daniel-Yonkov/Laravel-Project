@@ -1,0 +1,21 @@
+<?php $__env->startSection('title'); ?>
+Create Article
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('navAction1'); ?>
+class="active"
+<?php $__env->stopSection(); ?>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+	<h1>Create your article</h1>
+	<hr/>
+	<?php echo Form::open(['url'=>'articles']); ?>
+
+	<?php echo $__env->make('articles/form',['submitButton'=>'Add Article'], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+	<?php echo Form::close(); ?>
+
+
+	<?php echo $__env->make('errors/list', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('navigation', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('MasterLayout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

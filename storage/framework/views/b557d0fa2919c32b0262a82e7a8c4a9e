@@ -1,0 +1,56 @@
+<?php $__env->startSection('title'); ?>
+Contact form
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('navAction3'); ?>
+class="active"
+<?php $__env->stopSection(); ?>
+<?php $__env->stopSection(); ?>
+	<?php $__env->startSection('content'); ?>
+	<h1>Contact me!</h1>
+	<hr/>
+	<?php echo Form::open(array('action' => 'pagesController@contactStore', 'class' => 'form')); ?>
+
+
+<div class="form-group">
+    <?php echo Form::label('Your Name'); ?>
+
+    <?php echo Form::text('name', null,
+        array('class'=>'form-control',
+              'placeholder'=>'Your name')); ?>
+
+</div>
+
+<div class="form-group">
+    <?php echo Form::label('Your E-mail Address'); ?>
+
+    <?php echo Form::text('email', null,
+        array('class'=>'form-control',
+              'placeholder'=>'Your e-mail address')); ?>
+
+</div>
+
+<div class="form-group">
+    <?php echo Form::label('Your Message'); ?>
+
+    <?php echo Form::textarea('message', null,
+        array('class'=>'form-control',
+              'placeholder'=>'Your message')); ?>
+
+</div>
+
+<div class="form-group">
+    <?php echo Form::submit('Contact Us!',
+      array('class'=>'btn btn-primary')); ?>
+
+</div>
+<?php echo Form::close(); ?>
+
+	<?php $__env->startSection('footer'); ?>
+		<?php echo $__env->make('errors.list', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+	<?php $__env->stopSection(); ?>
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('navigation', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('MasterLayout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

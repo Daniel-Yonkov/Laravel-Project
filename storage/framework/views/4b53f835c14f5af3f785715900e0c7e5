@@ -1,0 +1,41 @@
+<?php /* Title Input Field */ ?>
+	<div class="form-group">
+		<?php echo Form::label('title','Name:'); ?>
+
+		<?php echo Form::text('title',null,['class'=>'form-control']); ?>
+
+	</div>
+	<?php /* Body Input Field */ ?>
+	<div class="form-group">
+		<?php echo Form::label('body','Body:'); ?>
+
+		<?php echo Form::textarea('body',null,['class'=>'form-control']); ?>
+
+	</div>
+	<?php /* Published_at Input Field */ ?>
+	<div class="form-group">
+		<?php echo Form::label('published_at','Publish On:'); ?>
+
+		<?php echo Form::input('date','published_at',date('Y-m-d'),['class'=>'form-control']); ?>
+
+	</div>
+	<?php /* TAG Field */ ?>
+	<div class="form-group">
+		<?php echo Form::label('tag_list','Tags:'); ?>
+
+		<?php echo Form::select('tag_list[]',$tags,null,['id'=>'tag_list','class'=>'form-control', 'multiple']); ?>
+
+	</div>
+	<?php /* Submit Form */ ?>
+	<div class="form-group">
+		<?php echo Form::submit($submitButton,['class'=>'btn btn-primary form-control',]); ?>
+
+	</div>
+
+	<?php $__env->startSection('footer'); ?>
+		<script>
+		$('#tag_list').select2({
+			placeholder: 'Choose a tag'
+		});
+		</script>
+	<?php $__env->stopSection(); ?>
